@@ -1,0 +1,12 @@
+stages:
+  - trigger
+
+trigger_subproject1:
+  stage: trigger
+  rules:
+    - changes:
+        - subproject1/**/*
+  trigger:
+    include:
+      - local: subproject1/.gitlab-ci.yml
+    strategy: depend
