@@ -18,8 +18,8 @@ build_subproject1:
     -
   script:
     - cd subproject1
-    - docker build -t 837003196692.dkr.ecr.us-east-1.amazonaws.com/subproject1:${CI_COMMIT_SHA} .
-    - docker push 837003196692.dkr.ecr.us-east-1.amazonaws.com/subproject1:${CI_COMMIT_SHA}
+    - docker build -t .dkr.ecr.us-east-1.amazonaws.com/subproject1:${CI_COMMIT_SHA} .
+    - docker push .dkr.ecr.us-east-1.amazonaws.com/subproject1:${CI_COMMIT_SHA}
 
 deploy_subproject1:
   stage: deploy
