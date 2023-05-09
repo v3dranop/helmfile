@@ -1,8 +1,19 @@
 repositories:
-  - name: stable
-    url: https://charts.helm.sh/stable
+- name: stable
+  url: https://charts.helm.sh/stable
+
+environments:
+  development:
+    values:
+      - kustomize: kustomize/demo/overlays/development/kustomization.yaml
+    secrets:
+      - kustomize/demo/overlays/development/.env
+  production:
+    values:
+      - kustomize: kustomize/demo/overlays/production/kustomization.yaml
+    secrets:
+      - kustomize/demo/overlays/production/.env
 
 releases:
   - name: example-app
-    namespace: demo1
-    chart: kustomize/demo/overlays/development
+    chart: kustomize/demo

@@ -2,3 +2,6 @@ bases:
   - ../../base
 patches:
   - replica_count.yaml
+images:
+- name: aimvector/springjava:v1
+  newTag: $(IMAGE_TAG)
